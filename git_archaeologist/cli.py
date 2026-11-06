@@ -18,7 +18,7 @@ from git_archaeologist.exporters.json_export import generate_json_report
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="git-archaeologist",
-        description="🏛️ Git-Archaeologist: Excavate code origins, bypass cosmetic churn, and evaluate Chesterton's Fence risk."
+        description="🏛️ Git-Archaeologist: Find out WHY a line of code exists before you touch it."
     )
     parser.add_argument(
         "--version", "-v",

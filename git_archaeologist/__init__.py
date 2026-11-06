@@ -1,6 +1,6 @@
 """
 Git-Archaeologist
-Deep code history, co-change entanglement, and archaeological risk analyzer.
+Find out WHY a line of code exists before you touch it.
 """
 
 __version__ = "0.1.0"

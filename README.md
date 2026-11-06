@@ -4,7 +4,8 @@
 
 # 🏛️ Git-Archaeologist
 
-**Deep Code History Excavation, Cosmetic Churn Bypass & Chesterton's Fence Risk Analyzer**
+**Find out WHY a line of code exists before you touch it.**  
+*Bypasses formatting noise, finds the true original commit, and surfaces linked issues & tests.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python: 3.8+](https://img.shields.io/badge/Python-3.8%2B-cyan.svg)](https://python.org)
@@ -12,7 +13,7 @@
 [![Zero Runtime Dependencies](https://img.shields.io/badge/Dependencies-Zero-success.svg)]()
 [![Bilingual](https://img.shields.io/badge/Docs-English%20%7C%20%E4%B8%AD%E6%96%87-blue)](README_CN.md)
 
-*Don't remove a fence until you know why it was put up in the first place.*
+*“Do not remove a fence until you know why it was put up in the first place.” — Chesterton's Fence Principle*
 
 [English](README.md) | [中文说明文档](README_CN.md)
 
@@ -47,12 +48,12 @@ Commit message: "style: run black and reindent"
 <img src="assets/architecture.svg" alt="Git-Archaeologist Architecture" width="100%" />
 </div>
 
-Git-Archaeologist acts like a real-world archaeological drill:
-1. **Target Inspection**: Takes any file or line range (`path/to/file.py:42-50`).
-2. **Cosmetic Churn Bypass**: Automatically identifies and penetrates superficial noise commits (formatters, linters, import sorting, bulk whitespace updates, rename-only churn).
-3. **True Genesis Event**: Pinpoints the exact historical commit where the business or defensive logic was born.
-4. **Co-Change Entanglement Detection**: Discovers what **other** files were born in the same commit. Did the original author write a unit test (`tests/test_stall.py`) specifically to prevent a race condition?
-5. **Chesterton's Fence Risk Score (0-100)**: Evaluates the age, intent (e.g. `HOTFIX`, `SECURITY`), and test entanglement to advise whether it's safe to modernize or a critical load-bearing wall.
+Git-Archaeologist walks backwards through commit history:
+1. **Target Selection**: Specify any file and line range (`path/to/file.py:42-50`).
+2. **Bypass Formatting Noise (Churn Bypass)**: Automatically skips past commits that only ran `black`, `prettier`, reindented lines, or reformatted whitespace.
+3. **Pinpoint the Original Commit (Genesis Commit)**: Discovers the exact commit where this logic was first introduced.
+4. **Inspect Coupled Changes (Co-change)**: Finds other files modified in that same commit, notably any unit tests (e.g. `tests/test_stall.py`) added to verify the behavior.
+5. **Estimate Refactoring Risk (0-100)**: Assesses how risky it is to modify or remove this code based on its age, original commit intent (hotfix, security, feature), and whether protective tests exist.
 
 ---
 

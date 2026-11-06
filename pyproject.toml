@@ -8,7 +8,7 @@ version = "0.1.0"
 authors = [
   { name="Mianm-l" },
 ]
-description = "Deep code history excavation, cosmetic churn bypass, and Chesterton's Fence risk evaluator."
+description = "Find out WHY a line of code exists before you touch it. Bypasses formatting churn and tracks origin context."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [

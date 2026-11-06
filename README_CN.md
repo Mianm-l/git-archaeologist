@@ -2,9 +2,9 @@
 
 <img src="assets/hero-banner.png" alt="Git-Archaeologist Banner" width="100%" />
 
-# 🏛️ Git-Archaeologist (代码考古学长)
+# 🏛️ Git-Archaeologist (代码考古)
 
-**穿透格式化噪声的局部代码起源溯源与「切斯特顿之栅」承重墙风险推演器**
+**接手老代码不敢动？穿透格式化与批量修改，查清任意代码最初为什么写、改动有什么风险。**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python: 3.8+](https://img.shields.io/badge/Python-3.8%2B-cyan.svg)](https://python.org)
@@ -12,7 +12,7 @@
 [![Zero Runtime Dependencies](https://img.shields.io/badge/Dependencies-Zero-success.svg)]()
 [![Bilingual](https://img.shields.io/badge/Docs-English%20%7C%20%E4%B8%AD%E6%96%87-blue)](README.md)
 
-*“在搞清楚一堵栅栏为什么立在这里之前，绝不要轻易拆掉它。” —— 切斯特顿之栅*
+*“在搞清楚一堵栅栏为什么立在这里之前，绝不要轻易拆掉它。” —— 切斯特顿之栅法则*
 
 [English](README.md) | [中文说明文档](README_CN.md)
 
@@ -47,12 +47,12 @@ Commit message: "style: run black and reindent"
 <img src="assets/architecture.svg" alt="Git-Archaeologist 架构全景图" width="100%" />
 </div>
 
-Git-Archaeologist 就像一把精准的代码地质勘探洛阳铲：
-1. **精准定位目标**：指定任意文件或代码行号区间（例如 `src/network.py:42-50`）。
-2. **格式化噪声智能穿透（Churn Bypass）**：自动识别并穿透无意义的格式化提交（Prettier、Black、ESLint、纯缩进、批量空格调整、仅文件重命名等提交）。
-3. **定位真正创生提交（True Genesis Event）**：一路下潜回溯到该段防御或业务逻辑真正诞生的第一天。
-4. **伴生拓扑挖掘（Co-Change Entanglement）**：深度分析那次提交同时修改了哪些文件。最关键的是——**自动检索当年是否伴随提交了专属回归单元测试（如 `tests/test_stall.py`）**，找到守卫该逻辑的“护卫犬测试”！
-5. **切斯特顿承重墙风险评分（0-100）**：综合代码存活年龄、创生类型（紧急修复/安全漏洞/常规需求）、伴生测试覆盖率，给出严谨的重构风险评级与操作指引。
+Git-Archaeologist 的工作流程：
+1. **指定代码范围**：输入任意文件或代码行号区间（例如 `src/network.py:42-50`）。
+2. **穿透格式化干扰（Churn Bypass）**：自动识别并跳过代码格式化、Linter 调整、纯缩进修改或大批量空行变更等表面提交。
+3. **定位最初引入该代码的提交（Genesis Commit）**：一路下潜回溯到这段逻辑真正诞生的第一天。
+4. **挖掘当时的关联修改（Co-Change）**：分析当时同一次 Commit 还改了哪些文件，重点检索当年是否附带了对应的单元测试（如 `tests/test_stall.py`）。
+5. **评估修改与删除风险（0-100）**：根据代码存活年限、提交意图（紧急修复 / 安全补丁 / 普通需求）及保护测试是否存在，输出改动建议。
 
 ---
 

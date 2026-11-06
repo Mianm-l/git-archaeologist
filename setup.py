@@ -7,7 +7,7 @@ setuptools.setup(
     name="git-archaeologist",
     version="0.1.0",
     author="Mianm-l",
-    description="Deep historical code excavation, cosmetic churn bypass, and Chesterton's Fence risk evaluator.",
+    description="Find out WHY a line of code exists before you touch it. Bypasses formatting churn and tracks origin context.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Mianm-l/git-archaeologist",
