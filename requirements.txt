@@ -1,0 +1,4 @@
+# Git-Archaeologist has zero mandatory external runtime dependencies.
+# Standard library Python 3.8+ only.
+# Optional for development & testing:
+pytest>=7.0.0
