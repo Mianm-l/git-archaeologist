@@ -43,8 +43,26 @@ class LineEvolutionStep:
 
 class GitWrapper:
     def __init__(self, repo_path: Optional[str] = None):
-        self.repo_path = os.path.abspath(repo_path or os.getcwd())
-        self.root_path = self._find_repo_root(self.repo_path)
+        self.repo_path = os.path.abspath(repo_path) if repo_path else None
+        if self.repo_path:
+            self.root_path = self._find_repo_root(self.repo_path)
+        else:
+            self.root_path = self._try_find_repo_root(os.getcwd())
+
+    def _try_find_repo_root(self, start_path: str) -> Optional[str]:
+        try:
+            return self._find_repo_root(start_path)
+        except GitExecutionError:
+            return None
+
+    def ensure_repo(self, hint_path: Optional[str] = None) -> str:
+        if self.root_path and os.path.exists(self.root_path):
+            return self.root_path
+        if hint_path:
+            self.root_path = self._find_repo_root(hint_path)
+            self.repo_path = self.root_path
+            return self.root_path
+        raise GitExecutionError("No git repository found in current working directory.")
 
     def _find_repo_root(self, start_path: str) -> str:
         """Finds the root directory containing the .git directory."""

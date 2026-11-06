@@ -67,6 +67,11 @@ class Excavator:
         start_str = match.group(2)
         end_str = match.group(3)
 
+        # Dynamically discover and bind repo from file path if not already bound
+        abs_target = os.path.abspath(file_p)
+        if self.git.root_path is None or not abs_target.startswith(self.git.root_path):
+            self.git.ensure_repo(abs_target)
+
         abs_file = os.path.join(self.git.root_path, file_p) if not os.path.isabs(file_p) else file_p
         if not os.path.exists(abs_file):
             raise FileNotFoundError(f"File not found: '{abs_file}'")
